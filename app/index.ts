@@ -119,9 +119,15 @@ class AppContainer extends HTMLElement {
                 this.shadowRoot?.appendChild(this.section[0]);
                 ;
 
-                this.featured.forEach((feat) => {
-                    this.shadowRoot?.appendChild(feat);
+
+                const featuredCards = this.ownerDocument.createElement("section")
+                featuredCards.className = 'feat'
+                this.featured.forEach((featuredCard) => {
+                    featuredCards.appendChild(featuredCard)
                 });
+                this.shadowRoot?.appendChild(featuredCards);
+
+
 
                 this.shadowRoot?.appendChild(this.section[1]);
                 ;
@@ -133,9 +139,14 @@ class AppContainer extends HTMLElement {
                 <h2 class="tittle">News</h2>
                 `;
 
-                this.news.forEach((newss) => {
-                    this.shadowRoot?.appendChild(newss);
+
+                const newsCards = this.ownerDocument.createElement("section")
+                newsCards.className = 'news'
+                this.news.forEach((newsCard) => {
+                    newsCards.appendChild(newsCard);
                 });
+                this.shadowRoot?.appendChild(newsCards);
+
 
                 this.shadowRoot.innerHTML += `
                 <button class="articles">
@@ -147,9 +158,14 @@ class AppContainer extends HTMLElement {
                 <h2 class="tittle">Characters</h2>
                 `;
 
-                this.character.forEach((characters) => {
-                    this.shadowRoot?.appendChild(characters);
+
+                const characterCards = this.ownerDocument.createElement("section")
+                characterCards.className = 'character'
+                this.character.forEach((characterCard) => {
+                    characterCards.appendChild(characterCard);
                 });
+                this.shadowRoot?.appendChild(characterCards);
+
 
                 this.shadowRoot.innerHTML += `
                 <section class="tittle">
@@ -158,9 +174,14 @@ class AppContainer extends HTMLElement {
                 </section>
                 `;
 
-                this.games.forEach((game) => {
-                    this.shadowRoot?.appendChild(game);
+
+                const gamesCards = this.ownerDocument.createElement("section")
+                gamesCards.className = 'games'
+                this.games.forEach((gameCard) => {
+                    gamesCards.appendChild(gameCard);
                 });
+                this.shadowRoot?.appendChild(gamesCards);
+
 
                 this.shadowRoot.innerHTML += `
                 <section class="tittle">
@@ -169,9 +190,15 @@ class AppContainer extends HTMLElement {
                 </section>
                 `;
 
-                this.best.forEach((bests) => {
-                    this.shadowRoot?.appendChild(bests);
+
+                const bestgamesCards = this.ownerDocument.createElement("section")
+                bestgamesCards.className = 'bestgames'
+                this.best.forEach((bestgameCard) => {
+                    bestgamesCards.appendChild(bestgameCard);
                 });
+                this.shadowRoot?.appendChild(bestgamesCards);
+
+
             }
         }
     }

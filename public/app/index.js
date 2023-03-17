@@ -71,7 +71,7 @@ class AppContainer extends HTMLElement {
         this.render();
     }
     render() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML += `
                 <link rel="stylesheet" href="./app/index.css">
@@ -92,21 +92,25 @@ class AppContainer extends HTMLElement {
                 `;
             (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(this.section[0]);
             ;
-            this.featured.forEach((feat) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(feat);
+            const featuredCards = this.ownerDocument.createElement("section");
+            featuredCards.className = 'feat';
+            this.featured.forEach((featuredCard) => {
+                featuredCards.appendChild(featuredCard);
             });
-            (_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.appendChild(this.section[1]);
+            (_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.appendChild(featuredCards);
+            (_c = this.shadowRoot) === null || _c === void 0 ? void 0 : _c.appendChild(this.section[1]);
             ;
-            (_c = this.shadowRoot) === null || _c === void 0 ? void 0 : _c.appendChild(this.section[2]);
+            (_d = this.shadowRoot) === null || _d === void 0 ? void 0 : _d.appendChild(this.section[2]);
             ;
             this.shadowRoot.innerHTML += `
                 <h2 class="tittle">News</h2>
                 `;
-            this.news.forEach((newss) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(newss);
+            const newsCards = this.ownerDocument.createElement("section");
+            newsCards.className = 'news';
+            this.news.forEach((newsCard) => {
+                newsCards.appendChild(newsCard);
             });
+            (_e = this.shadowRoot) === null || _e === void 0 ? void 0 : _e.appendChild(newsCards);
             this.shadowRoot.innerHTML += `
                 <button class="articles">
                 <h2>See all news articles</h2>
@@ -115,30 +119,36 @@ class AppContainer extends HTMLElement {
             this.shadowRoot.innerHTML += `
                 <h2 class="tittle">Characters</h2>
                 `;
-            this.character.forEach((characters) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(characters);
+            const characterCards = this.ownerDocument.createElement("section");
+            characterCards.className = 'character';
+            this.character.forEach((characterCard) => {
+                characterCards.appendChild(characterCard);
             });
+            (_f = this.shadowRoot) === null || _f === void 0 ? void 0 : _f.appendChild(characterCards);
             this.shadowRoot.innerHTML += `
                 <section class="tittle">
                 <h2>Digital best sellers</h2>
                 <a>See full list</a>
                 </section>
                 `;
-            this.games.forEach((game) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(game);
+            const gamesCards = this.ownerDocument.createElement("section");
+            gamesCards.className = 'games';
+            this.games.forEach((gameCard) => {
+                gamesCards.appendChild(gameCard);
             });
+            (_g = this.shadowRoot) === null || _g === void 0 ? void 0 : _g.appendChild(gamesCards);
             this.shadowRoot.innerHTML += `
                 <section class="tittle">
                 <h2>Digital new releases</h2>
                 <a>See full list</a>
                 </section>
                 `;
-            this.best.forEach((bests) => {
-                var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(bests);
+            const bestgamesCards = this.ownerDocument.createElement("section");
+            bestgamesCards.className = 'bestgames';
+            this.best.forEach((bestgameCard) => {
+                bestgamesCards.appendChild(bestgameCard);
             });
+            (_h = this.shadowRoot) === null || _h === void 0 ? void 0 : _h.appendChild(bestgamesCards);
         }
     }
 }

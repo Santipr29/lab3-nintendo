@@ -4,6 +4,10 @@
 
 section{
     border: gray 1px solid;
+    min-height: 330px;
+    max-height: 330px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 img{
