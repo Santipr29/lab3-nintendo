@@ -35,7 +35,7 @@ class MyNewscard extends HTMLElement {
                 <section>
                     <img src="${this.image}">
                     <p>${this.date}</p>
-                    <h2>${this.name}</h2>
+                    <h4>${this.name}</h4>
                     <a>Read more</a>
                 </section>
                 `;

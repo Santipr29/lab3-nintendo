@@ -44,7 +44,7 @@ class MyCharacters extends HTMLElement {
                 <link rel="stylesheet" href="./app/components/Characterscard/Characterscard.css">
                 <section>
                     <img src="${this.image}">
-                    <h2>${this.name}</h2>
+                    <h3>${this.name}</h3>
                 </section>
                 `;
             }

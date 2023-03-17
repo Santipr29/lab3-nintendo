@@ -39,17 +39,17 @@ class MyGames extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/Gamescard/Gamescard.css">
-                <section>
-                    <img src="${this.image}">
-                    <h2>${this.name}</h2>
-                    <p>${this.date}</p>
-                    <h2>${this.price}</h2>
-                    <section>
-                        <h3>${this.plataform}</h3>
-                        <button>
-                            <img src="https://cdn-icons-png.flaticon.com/512/2832/2832478.png">
-                        </button>
-                    </section>
+                <section class="main">
+                        <img src="${this.image}" class="imgb">
+                        <h2>${this.name}</h2>
+                        <p>${this.date}</p>
+                        <h3>$ ${this.price}</h3>
+                        <section class="sub">
+                            <h4>${this.plataform}</h4>
+                            <button>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2832/2832478.png">
+                            </button>
+                        </section>
                 </section>
                 `;
         }

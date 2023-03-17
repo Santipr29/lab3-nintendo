@@ -74,12 +74,15 @@ class AppContainer extends HTMLElement {
         var _a, _b, _c;
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML += `
+                <link rel="stylesheet" href="./app/index.css">
+                `;
+            this.shadowRoot.innerHTML += `
                 <my-bar></my-bar>
                 `;
             this.shadowRoot.innerHTML += `
-                <section>
+                <section class="main">
                 <img src="https://assets.nintendo.com/image/upload/f_auto/q_auto/c_fill,w_1500/ncom/en_US/merchandising/center-stage-banner/bayonetta-origins/3600x1300_BayoOrigins_centerstage_desktop">
-                <section>
+                <section class="description">
                     <h2>Pre-order digitally today, play on 3/17</h2>
                     <button>
                     <h3>Pre-order now</h3>
@@ -98,26 +101,26 @@ class AppContainer extends HTMLElement {
             (_c = this.shadowRoot) === null || _c === void 0 ? void 0 : _c.appendChild(this.section[2]);
             ;
             this.shadowRoot.innerHTML += `
-                <h2>News</h2>
+                <h2 class="tittle">News</h2>
                 `;
             this.news.forEach((newss) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(newss);
             });
             this.shadowRoot.innerHTML += `
-                <button>
+                <button class="articles">
                 <h2>See all news articles</h2>
                 </button>
                 `;
             this.shadowRoot.innerHTML += `
-                <h2>Characters</h2>
+                <h2 class="tittle">Characters</h2>
                 `;
             this.character.forEach((characters) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(characters);
             });
             this.shadowRoot.innerHTML += `
-                <section>
+                <section class="tittle">
                 <h2>Digital best sellers</h2>
                 <a>See full list</a>
                 </section>
@@ -127,7 +130,7 @@ class AppContainer extends HTMLElement {
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(game);
             });
             this.shadowRoot.innerHTML += `
-                <section>
+                <section class="tittle">
                 <h2>Digital new releases</h2>
                 <a>See full list</a>
                 </section>

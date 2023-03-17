@@ -47,7 +47,7 @@ class MyFeaturedcard extends HTMLElement {
                 <link rel="stylesheet" href="./app/components/Featuredcard/Featuredcard.css">
                 <section>
                     <img src="${this.image}">
-                    <h2>${this.name}</h2>
+                    <h3>${this.name}</h3>
                     <p>${this.plataform}</p>
                 </section>
                 `;

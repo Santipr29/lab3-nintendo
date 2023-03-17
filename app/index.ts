@@ -95,14 +95,19 @@ class AppContainer extends HTMLElement {
         
         render() {
             if (this.shadowRoot) {
+
+                this.shadowRoot.innerHTML += `
+                <link rel="stylesheet" href="./app/index.css">
+                `;
+
                 this.shadowRoot.innerHTML += `
                 <my-bar></my-bar>
                 `;
 
                 this.shadowRoot.innerHTML += `
-                <section>
+                <section class="main">
                 <img src="https://assets.nintendo.com/image/upload/f_auto/q_auto/c_fill,w_1500/ncom/en_US/merchandising/center-stage-banner/bayonetta-origins/3600x1300_BayoOrigins_centerstage_desktop">
-                <section>
+                <section class="description">
                     <h2>Pre-order digitally today, play on 3/17</h2>
                     <button>
                     <h3>Pre-order now</h3>
@@ -125,7 +130,7 @@ class AppContainer extends HTMLElement {
                 ;
 
                 this.shadowRoot.innerHTML += `
-                <h2>News</h2>
+                <h2 class="tittle">News</h2>
                 `;
 
                 this.news.forEach((newss) => {
@@ -133,13 +138,13 @@ class AppContainer extends HTMLElement {
                 });
 
                 this.shadowRoot.innerHTML += `
-                <button>
+                <button class="articles">
                 <h2>See all news articles</h2>
                 </button>
                 `;
 
                 this.shadowRoot.innerHTML += `
-                <h2>Characters</h2>
+                <h2 class="tittle">Characters</h2>
                 `;
 
                 this.character.forEach((characters) => {
@@ -147,7 +152,7 @@ class AppContainer extends HTMLElement {
                 });
 
                 this.shadowRoot.innerHTML += `
-                <section>
+                <section class="tittle">
                 <h2>Digital best sellers</h2>
                 <a>See full list</a>
                 </section>
@@ -158,7 +163,7 @@ class AppContainer extends HTMLElement {
                 });
 
                 this.shadowRoot.innerHTML += `
-                <section>
+                <section class="tittle">
                 <h2>Digital new releases</h2>
                 <a>See full list</a>
                 </section>

@@ -1,0 +1,19 @@
+img{
+    min-width: 270px;
+    max-width: 270px;
+    min-height: 170px;
+    max-height: 170px;
+}
+
+p{
+    margin-top: -1px;
+}
+
+h4{
+    margin-top: 30px;
+}
+
+a{
+    margin-top: 10px;
+    color: red;
+}

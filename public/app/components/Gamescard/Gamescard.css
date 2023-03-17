@@ -1,0 +1,50 @@
+.main{
+    border: gray 1px solid;
+}
+
+.imgb{
+    min-width: 270px;
+    max-width: 270px;
+    min-height: 170px;
+    max-height: 170px;
+}
+
+h2{
+    margin-left: 20px;
+}
+
+p{
+    margin-left: 20px;
+    margin-top: -16px;
+}
+
+h3{
+    margin-left: 20px;
+    margin-top: 70px;
+}
+
+.sub{
+    margin-top: -27px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+button{
+    border-color: transparent;
+    margin-left: 75px;
+}
+
+h4{
+    border: red 3px solid; 
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+}
+
+button img{
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+}

@@ -1,0 +1,11 @@
+img{
+    min-width: 270px;
+    max-width: 270px;
+    min-height: 270px;
+    max-height: 270px;
+    border-radius: 20px;
+}
+
+h3{
+    margin-left: 20px;
+}

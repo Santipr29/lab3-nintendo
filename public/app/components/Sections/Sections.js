@@ -34,10 +34,10 @@ class MySections extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/Sections/Sections.css">
-                <section>
-                    <h2>${this.name}</h2>
+                <section class="main">
+                    <h1>${this.name}</h1>
                     <img src="${this.image}">
-                    <section>
+                    <section class="info">
                         <h3>${this.description}</h3>
                         <button>
                         <h4>${this.buttontext}</h4>

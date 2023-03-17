@@ -1,0 +1,28 @@
+*{
+    font-family: arial;
+}
+
+section{
+    border: gray 1px solid;
+}
+
+img{
+    min-width: 270px;
+    max-width: 270px;
+    min-height: 170px;
+    max-height: 170px;
+}
+
+h3{
+    margin-left: 10px;
+}
+
+p{
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: red 3px solid; 
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+}
