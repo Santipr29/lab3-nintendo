@@ -1,20 +1,14 @@
-export enum Attribute {
-    "image" = "image",
-    "name" = "name",
-    "date" = "date",
-    "price" = "price",
-    "plataform" = "plataform",
-}
-
+export var Attribute;
+(function (Attribute) {
+    Attribute["image"] = "image";
+    Attribute["name"] = "name";
+    Attribute["date"] = "date";
+    Attribute["price"] = "price";
+    Attribute["plataform"] = "plataform";
+})(Attribute || (Attribute = {}));
 class MyGames extends HTMLElement {
-    image?: string;
-    name?: string;
-    date?: string;
-    price?: number;
-    plataform?: string;
-    
     static get observedAttributes() {
-        const attrs: Record<Attribute, null> = {
+        const attrs = {
             image: null,
             name: null,
             date: null,
@@ -23,37 +17,27 @@ class MyGames extends HTMLElement {
         };
         return Object.keys(attrs);
     }
-    
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
     }
-    
     connectedCallback() {
         this.render();
     }
-    
-    attributeChangedCallback(
-        propName: Attribute,
-        _: string | undefined,
-        newValue: string | undefined
-        ) {
-            switch (propName) {
-                case Attribute.price:
+    attributeChangedCallback(propName, _, newValue) {
+        switch (propName) {
+            case Attribute.price:
                 this.price = newValue ? Number(newValue) : undefined;
                 break;
-                
-                default:
+            default:
                 this[propName] = newValue;
                 break;
-            }
-            
-            this.render();
         }
-        
-        render() {
-            if (this.shadowRoot) {
-                this.shadowRoot.innerHTML = `
+        this.render();
+    }
+    render() {
+        if (this.shadowRoot) {
+            this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/Gamescard/Gamescard.css">
                 <section>
                     <img src="${this.image}">
@@ -68,9 +52,8 @@ class MyGames extends HTMLElement {
                     </section>
                 </section>
                 `;
-            }
         }
     }
-    
+}
 customElements.define("my-games", MyGames);
 export default MyGames;

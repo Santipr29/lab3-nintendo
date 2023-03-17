@@ -1,25 +1,22 @@
-export enum Attribute {
-    "image" = "image",
+export enum Attrib {
     "name" = "name",
-    "date" = "date",
-    "price" = "price",
-    "plataform" = "plataform",
+    "image" = "image",
+    "description" = "description",
+    "buttontext" = "buttontext",
 }
 
-class MyGames extends HTMLElement {
-    image?: string;
+class MySections extends HTMLElement {
     name?: string;
-    date?: string;
-    price?: number;
-    plataform?: string;
+    image?: string;
+    description?: string;
+    buttontext?: string;
     
     static get observedAttributes() {
-        const attrs: Record<Attribute, null> = {
-            image: null,
+        const attrs: Record<Attrib, null> = {
             name: null,
-            date: null,
-            price: null,
-            plataform: null,
+            image: null,
+            description: null,
+            buttontext: null,
         };
         return Object.keys(attrs);
     }
@@ -34,15 +31,11 @@ class MyGames extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attribute,
+        propName: Attrib,
         _: string | undefined,
         newValue: string | undefined
         ) {
             switch (propName) {
-                case Attribute.price:
-                this.price = newValue ? Number(newValue) : undefined;
-                break;
-                
                 default:
                 this[propName] = newValue;
                 break;
@@ -54,16 +47,14 @@ class MyGames extends HTMLElement {
         render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <link rel="stylesheet" href="./app/components/Gamescard/Gamescard.css">
+                <link rel="stylesheet" href="./app/components/Sections/Sections.css">
                 <section>
-                    <img src="${this.image}">
                     <h2>${this.name}</h2>
-                    <p>${this.date}</p>
-                    <h2>${this.price}</h2>
+                    <img src="${this.image}">
                     <section>
-                        <h3>${this.plataform}</h3>
+                        <h3>${this.description}</h3>
                         <button>
-                            <img src="https://cdn-icons-png.flaticon.com/512/2832/2832478.png">
+                        <h4>${this.buttontext}</h4>
                         </button>
                     </section>
                 </section>
@@ -72,5 +63,5 @@ class MyGames extends HTMLElement {
         }
     }
     
-customElements.define("my-games", MyGames);
-export default MyGames;
+customElements.define("my-sections", MySections);
+export default MySections;

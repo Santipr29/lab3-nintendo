@@ -1,49 +1,36 @@
-export enum Att {
-    "image" = "image",
-    "name" = "name",
-    "plataform" = "plataform",
-}
-
+export var Att;
+(function (Att) {
+    Att["image"] = "image";
+    Att["name"] = "name";
+    Att["plataform"] = "plataform";
+})(Att || (Att = {}));
 class MyFeaturedcard extends HTMLElement {
-    image?: string;
-    name?: string;
-    plataform?: string;
-    
     static get observedAttributes() {
-        const attrs: Record<Att, null> = {
+        const attrs = {
             image: null,
             name: null,
             plataform: null,
         };
         return Object.keys(attrs);
     }
-    
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
     }
-    
     connectedCallback() {
         this.render();
     }
-    
-    attributeChangedCallback(
-        propName: Att,
-        _: string | undefined,
-        newValue: string | undefined
-        ) {
-            switch (propName) {
-                default:
+    attributeChangedCallback(propName, _, newValue) {
+        switch (propName) {
+            default:
                 this[propName] = newValue;
                 break;
-            }
-            
-            this.render();
         }
-        
-        render() {
-            if (this.shadowRoot) {
-                this.shadowRoot.innerHTML = `
+        this.render();
+    }
+    render() {
+        if (this.shadowRoot) {
+            this.shadowRoot.innerHTML = `
                 <link rel="stylesheet" href="./app/components/Featuredcard/Featuredcard.css">
                 <section>
                     <img src="${this.image}">
@@ -51,9 +38,8 @@ class MyFeaturedcard extends HTMLElement {
                     <p>${this.plataform}</p>
                 </section>
                 `;
-            }
         }
     }
-    
+}
 customElements.define("my-featuredcard", MyFeaturedcard);
 export default MyFeaturedcard;

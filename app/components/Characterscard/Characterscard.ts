@@ -1,18 +1,15 @@
-export enum Attr {
+export enum Attri {
     "image" = "image",
-    "date" = "date",
     "name" = "name",
 }
 
-class MyNewscard extends HTMLElement {
+class MyCharacters extends HTMLElement {
     image?: string;
-    date?: string;
     name?: string;
     
     static get observedAttributes() {
-        const attrs: Record<Attr, null> = {
+        const attrs: Record<Attri, null> = {
             image: null,
-            date: null,
             name: null,
         };
         return Object.keys(attrs);
@@ -28,7 +25,7 @@ class MyNewscard extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attr,
+        propName: Attri,
         _: string | undefined,
         newValue: string | undefined
         ) {
@@ -44,17 +41,15 @@ class MyNewscard extends HTMLElement {
         render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <link rel="stylesheet" href="./app/components/Newscard/Newscard.css">
+                <link rel="stylesheet" href="./app/components/Characterscard/Characterscard.css">
                 <section>
                     <img src="${this.image}">
-                    <p>${this.date}</p>
                     <h2>${this.name}</h2>
-                    <a>Read more</a>
                 </section>
                 `;
             }
         }
     }
     
-customElements.define("my-newscard", MyNewscard);
-export default MyNewscard;
+customElements.define("my-character", MyCharacters);
+export default MyCharacters;

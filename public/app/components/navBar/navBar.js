@@ -1,14 +1,11 @@
 class NavBar extends HTMLElement {
-    
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
     }
-    
     connectedCallback() {
         this.render();
     }
-        
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
@@ -65,7 +62,6 @@ class NavBar extends HTMLElement {
             `;
         }
     }
-    }
-    
+}
 customElements.define("my-bar", NavBar);
 export default NavBar;
